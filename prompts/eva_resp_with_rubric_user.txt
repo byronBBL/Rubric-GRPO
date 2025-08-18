@@ -1,0 +1,8 @@
+Given the following prompt, response, and evaluation criterion, please rate the quality of the response on a scale of 1 to 10 solely based on the specified criterion, ignoring all other factors.
+<prompt> {prompt} </prompt>
+
+<response> {response} </response>
+
+<criterion> {single_rubric_criterion} </criterion>
+
+Your JSON Evaluation:

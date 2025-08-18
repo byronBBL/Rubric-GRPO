@@ -1,0 +1,53 @@
+You are an expert rubric writer for a wide range of academic disciplines, including but not limited to Biology, Physics, Chemistry, Mathematics, and Medicine. Your job is to generate a self-contained set of evaluation criteria (“rubrics”) for judging how good a response is to a given question in one of these disciplines. Rubrics can cover aspects such as factual correctness, depth of reasoning, clarity, completeness, computational accuracy, style, helpfulness, and common pitfalls. Each rubric item must be fully self-contained so that non-expert readers need not consult any external information.
+
+Inputs:
+
+* question: The full question text.
+* reference_answer: The ideal answer, including any key facts, explanations and reasoning steps.
+
+Total items:
+
+* Choose 3–10 rubric items based on question complexity, prioritizing the most important evaluation aspects for the given discipline and task.
+
+Each rubric item must include exactly three keys:
+
+1.  title (2–4 words)
+2.  description: One sentence beginning with its category prefix ('Essential Criteria:', 'Important Criteria:', 'Optional Criteria:' or 'Pitfall Criteria:'), explicitly stating what to look for. For example:
+    * Science (Physics) Example:
+        * `Essential Criteria: States that in the described closed system, the total mechanical energy (kinetic plus potential) before the event equals the total mechanical energy after the event.`
+        * `Important Criteria: Breaks down numerical energy values for each stage, demonstrating that initial kinetic energy plus initial potential energy equals final kinetic energy plus final potential energy.`
+        * `Optional Criteria: Provides a concrete example, such as a pendulum converting between kinetic and potential energy, to illustrate how energy shifts within the system.`
+        * `Pitfall Criteria: Does not mention that frictional or air-resistance losses are assumed negligible when applying conservation of mechanical energy.`
+    * Mathematics (Calculation) Example:
+        * `Essential Criteria: States the correct final numerical answer or simplified algebraic expression.`
+        * `Important Criteria: Shows the key steps of the calculation, such as the correct setup of the integral or the step-by-step algebraic manipulation.`
+        * `Optional Criteria: Mentions an alternative valid solution method or provides a check to verify the answer's correctness.`
+        * `Pitfall Criteria: Makes a common calculation error, such as a sign mistake, or fails to state the units in the final answer.`
+3.  weight: For Essential/Important/Optional, use 1–5 (5 = most important); for Pitfall, use –1 or –2.
+
+Category guidance:
+
+* Essential: Critical facts, calculations, or safety checks; omission invalidates the response.
+* Important: Key reasoning or completeness; strongly affects quality.
+* Optional: Nice-to-have style or extra depth.
+* Pitfall: Common mistakes or omissions; highlight things often missed.
+
+Format notes:
+
+* When referring to answer choices, explicitly say “Identifies (A)”, “Identifies (B)”, etc.
+* If a clear conclusion is required (e.g. “The final answer is (B)”), include an `Essential Criteria` for it.
+* If reasoning should precede the final answer, include an `Important Criteria` to that effect.
+* If brevity is valued, include an `Optional Criteria` about conciseness.
+* All rubric items must be mutually exclusive (no overlapping scope) so that each evaluates a distinct aspect of the answer.
+
+Output: Provide a JSON array of rubric objects. Each object must contain exactly three keys—`title`, `description`, and `weight`. Do not copy large blocks of the question or `reference_answer` into the text. Each description must begin with its category prefix, and no extra keys are allowed.
+
+Now, given the question and reference_answer, generate the rubric as described. The reference answer is an ideal response but may not be fully correct or exhaustive; use it only as a helpful guide.
+
+question:
+{question}
+
+reference_answer:
+{reference_answer}
+
+rubric:
