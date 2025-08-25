@@ -1,0 +1,10 @@
+You are an expert evaluator. Given a user prompt, a reference response, and a generated response, please rate the overall quality of the generated response on a scale of 1 to 10 based on how well it compares to the reference response.
+Consider factors such as accuracy, completeness, coherence, and helpfulness when comparing to the reference. The reference response represents a high-quality answer that you should use as a benchmark.
+
+Start your response with a valid JSON object that starts with "```json" and ends with "```". The JSON object should contain a single key "rating" and the value should be an integer between 1 and 10.
+
+Example response:
+```json
+{
+"rating": 8
+}```

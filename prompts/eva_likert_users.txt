@@ -1,0 +1,8 @@
+Given the following prompt, reference response, and generated response, please rate the overall quality of the generated response on a scale of 1 to 10 based on how well it compares to the reference.
+<prompt> {prompt} </prompt>
+
+<reference_response> {reference} </reference_response>
+
+<generated_response> {response} </generated_response>
+
+Your JSON Evaluation:
