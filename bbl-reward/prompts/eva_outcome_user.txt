@@ -1,0 +1,8 @@
+Given the following prompt, response, and groundtruth, please judge whether the response is consistent with the groundtruth (1) or not consistent with the groundtruth (0). Ignore all other factors outside this consistency check.
+<prompt> {prompt} </prompt>
+
+<response> {response} </response>
+
+<groundtruth> {groundtruth} </groundtruth>
+
+Your JSON Evaluation:

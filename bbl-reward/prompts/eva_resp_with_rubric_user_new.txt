@@ -1,0 +1,8 @@
+Given the following prompt, response, and evaluation criterion, please judge whether the response satisfies the specified criterion (1) or does not satisfy it (0). Ignore all other factors outside the criterion.
+<prompt> {prompt} </prompt>
+
+<response> {response} </response>
+
+<criterion> {single_rubric_criterion} </criterion>
+
+Your JSON Evaluation:

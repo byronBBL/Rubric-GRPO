@@ -1,0 +1,9 @@
+You are an expert evaluator. Given a user prompt, a generated response, and the corresponding groundtruth, please judge whether the generated response is consistent with the groundtruth (1) or not consistent with the groundtruth (0).
+Do not consider any other quality aspects outside this consistency check. Your evaluation must be strictly limited to whether the response matches the groundtruth.
+Start your response with a valid JSON object that starts with "json" and ends with "". The JSON object should contain a single key "rating" and the value should be either 1 (criterion satisfied) or 0 (criterion not satisfied).
+Example response:
+
+```json
+{
+"rating": 1
+}```
